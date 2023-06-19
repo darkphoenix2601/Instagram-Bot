@@ -1,26 +1,3 @@
-#MIT License
-
-#Copyright (c) 2021 subinps
-
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
-
-
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from config import Config
@@ -51,21 +28,23 @@ async def cb_handler(bot: Client, query: CallbackQuery):
         await query.message.edit_text(
             HELP,
             reply_markup=InlineKeyboardMarkup(
-			[
 				[
-					InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/subinps'),
-					InlineKeyboardButton("🤖Other Bots", url="https://t.me/subin_works/122"),
-                    InlineKeyboardButton("⚙️Update Channel", url="https://t.me/subin_works")
-				],
-				[
-					InlineKeyboardButton("🔗Source Code", url="https://github.com/subinps/Instagram-Bot"),
-					InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/subinps/Instagram-Bot")
+					[
+						InlineKeyboardButton("👨🏼‍💻Developer", url='https://t.me/Godfather_2606'),
+						InlineKeyboardButton("🤖Other Bots", url="https://t.me/Professor_Ashu")
+					],
+                    [
+                        InlineKeyboardButton("🔗Source Code", url="https://github.com/darkphoenix2601/Instagram-Bot"),
+						InlineKeyboardButton("🧩Deploy Own Bot", url="https://heroku.com/deploy?template=https://github.com/darkphoenix2601/Instagram-Bot")
+                    ],
+                    [
+                        InlineKeyboardButton("👨🏼‍🦯How To Use?", callback_data="help#subin")
+
+                    ]
+					
 				]
-			]
 			)
-		)
-    
-    
+        )
     elif query.data.startswith("ppic"):
         profile = Profile.from_username(insta.context, username)
         profilepichd = profile.profile_pic_url
