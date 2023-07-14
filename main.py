@@ -21,7 +21,6 @@ async def main():
         Config.L.load_session_from_file(USER, filename=f"./{USER}")
         STATUS.add(1)
 
-
 if Config.INSTA_SESSIONFILE_ID:
     bot.run(main)
     idle()
